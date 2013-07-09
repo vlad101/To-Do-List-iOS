@@ -18,6 +18,8 @@
 		E73B973F178B918100753CEA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E73B973E178B918100753CEA /* Default-568h@2x.png */; };
 		E73B9742178B918100753CEA /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E73B9741178B918100753CEA /* ListViewController.m */; };
 		E73B9745178B918100753CEA /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73B9743178B918100753CEA /* ListViewController.xib */; };
+		E77F5AD0178C42FF00AE83EF /* Action_Man.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E77F5ACF178C42FF00AE83EF /* Action_Man.ttf */; };
+		E77F5AD3178C438200AE83EF /* UIFont+ListAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E77F5AD2178C438200AE83EF /* UIFont+ListAdditions.m */; };
 		E7EB2E37178BB21F00BDC687 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = E7EB2E36178BB21F00BDC687 /* Item.m */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,9 @@
 		E73B9740178B918100753CEA /* ListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		E73B9741178B918100753CEA /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		E73B9744178B918100753CEA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ListViewController.xib; sourceTree = "<group>"; };
+		E77F5ACF178C42FF00AE83EF /* Action_Man.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Action_Man.ttf; sourceTree = "<group>"; };
+		E77F5AD1178C438200AE83EF /* UIFont+ListAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+ListAdditions.h"; path = "To-Do-List/UIFont+ListAdditions.h"; sourceTree = "<group>"; };
+		E77F5AD2178C438200AE83EF /* UIFont+ListAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+ListAdditions.m"; path = "To-Do-List/UIFont+ListAdditions.m"; sourceTree = "<group>"; };
 		E7EB2E35178BB21F00BDC687 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = ../Item.h; sourceTree = "<group>"; };
 		E7EB2E36178BB21F00BDC687 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = ../Item.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,6 +64,7 @@
 		E73B971C178B918100753CEA = {
 			isa = PBXGroup;
 			children = (
+				E77F5AD5178C43B800AE83EF /* Categories */,
 				E73B972E178B918100753CEA /* To-Do-List */,
 				E73B9727178B918100753CEA /* Frameworks */,
 				E73B9726178B918100753CEA /* Products */,
@@ -101,6 +107,7 @@
 		E73B972F178B918100753CEA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E77F5ACF178C42FF00AE83EF /* Action_Man.ttf */,
 				E73B9730178B918100753CEA /* To-Do-List-Info.plist */,
 				E73B9731178B918100753CEA /* InfoPlist.strings */,
 				E73B9734178B918100753CEA /* main.m */,
@@ -110,6 +117,15 @@
 				E73B973E178B918100753CEA /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E77F5AD5178C43B800AE83EF /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E77F5AD1178C438200AE83EF /* UIFont+ListAdditions.h */,
+				E77F5AD2178C438200AE83EF /* UIFont+ListAdditions.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E73B9733178B918100753CEA /* InfoPlist.strings in Resources */,
+				E77F5AD0178C42FF00AE83EF /* Action_Man.ttf in Resources */,
 				E73B973B178B918100753CEA /* Default.png in Resources */,
 				E73B973D178B918100753CEA /* Default@2x.png in Resources */,
 				E73B973F178B918100753CEA /* Default-568h@2x.png in Resources */,
@@ -183,6 +200,7 @@
 				E73B9735178B918100753CEA /* main.m in Sources */,
 				E73B9739178B918100753CEA /* ListAppDelegate.m in Sources */,
 				E73B9742178B918100753CEA /* ListViewController.m in Sources */,
+				E77F5AD3178C438200AE83EF /* UIFont+ListAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
