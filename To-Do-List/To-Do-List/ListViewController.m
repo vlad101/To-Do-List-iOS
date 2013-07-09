@@ -31,10 +31,13 @@
         for(int i = 0; i < 10; i++)
         {
             // Create an Item object.
-            Item *item = [[Item alloc] initWithHeader:@"H" body:@"B"];
+            //Item *item = [[Item alloc] initWithHeader:@"H" body:@"B"];
             //Item *item = [[Item alloc] init];
             //Item *item = [[Item alloc] initWithHeader:@"H"];
             //Item *item = [[Item alloc] initWithBody:@"B"];
+            
+            // Create a random item.
+            Item *item = [Item randomItem];
             
             // Add an item to an array.
             [_items addObject:item];

@@ -23,6 +23,45 @@
 @synthesize date = _date;
 @synthesize dateString = _dateString;
 
++ (Item *) randomItem
+{
+    // Create an array with random headers.
+    NSArray *randomHeaders = [NSArray arrayWithObjects:@"Header 1",
+                        @"Header 2",
+                        @"Header 3",
+                        @"Header 4",
+                        @"Header 5",
+                        @"Header 6",
+                        @"Header 7",
+                        @"Header 8",
+                        @"Header 9",
+                        @"Header 10",
+                        nil];
+    
+    // Create an array with random bodies.
+    NSArray *randomBodies = [NSArray arrayWithObjects:@"Body 1",
+                        @"Body 2",
+                        @"Body 3",
+                        @"Body 4",
+                        @"Body 5",
+                        @"Body 6",
+                        @"Body 7",
+                        @"Body 8",
+                        @"Body 9",
+                        @"Body 10",
+                        nil];
+    
+    // Get the random index of random header and bosy.
+    NSInteger headerIndex = rand() % [randomHeaders count];
+    NSInteger bodyIndex = rand() % [randomHeaders count];
+    
+    // Initializer the random item with the data.
+    Item *randomItem = [[Item alloc] initWithHeader:[randomHeaders objectAtIndex:headerIndex] body:[randomBodies objectAtIndex:bodyIndex]];
+    
+    // Return The Item.
+    return randomItem;
+}
+
 - (id)initWithHeader:(NSString *)header
                 body:(NSString *)body
 {

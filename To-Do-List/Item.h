@@ -10,6 +10,8 @@
 
 @interface Item : NSObject
 
++ (Item *) randomItem;
+
 // A designated initializer.
 - (id)initWithHeader:(NSString *)header
                 body:(NSString *)body;
