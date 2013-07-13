@@ -7,17 +7,21 @@
 //
 
 #import "ListAppDelegate.h"
-
-#import "ListViewController.h"
+#import "ItemsViewController.h"
 
 @implementation ListAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.viewController = [[ListViewController alloc] initWithNibName:@"ListViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    
+    // Create a ItemsViewController.
+    ItemsViewController *itemsViewController = [[ItemsViewController alloc]init];
+    
+    // Place ItemsViewController's table view in the window hierarchy.
+    [[self window] setRootViewController:itemsViewController];
+    
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }

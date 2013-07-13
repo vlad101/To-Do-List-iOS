@@ -98,7 +98,7 @@
 
 - (NSString *)description
 {
-    NSString *descriptionString = [NSString stringWithFormat:@"\nHeader: %@\nBody: %@\nDate: %@", _header, _body, _dateString];
+    NSString *descriptionString = [NSString stringWithFormat:@"Header: %@ Body: %@ Date: %@", _header, _body, _dateString];
     return descriptionString;
 }
 
