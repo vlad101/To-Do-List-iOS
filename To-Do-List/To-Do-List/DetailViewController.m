@@ -64,7 +64,10 @@
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd-MM-yyyy 'at' hh:mma"];
+    
     [_dateLabel setText:[formatter stringFromDate:[NSDate date]]];
+    
+    [[self navigationItem] setTitle:[item header]];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

@@ -14,12 +14,6 @@
 
 @implementation ItemsViewController
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [[self tableView] reloadData];
-}
-
 - (id)init
 {
     // Call the superclass's designated initializer.
@@ -52,6 +46,12 @@
 - (id)initWithStyle:(UITableViewStyle)style
 {
     return [self init];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[self tableView] reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -88,9 +88,9 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
-    [[ItemListing sharedListing] moveItemAtIndex:[sourceIndexPath row] toIndex:[destinationIndexPath row]];
+    [[ItemListing sharedListing] moveItemAtIndex:[fromIndexPath row] toIndex:[toIndexPath row]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

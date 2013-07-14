@@ -12,6 +12,7 @@
 
 @interface DetailViewController : UIViewController
 <UITextViewDelegate>
+{}
 
 @property (nonatomic, strong) Item *item;
 
