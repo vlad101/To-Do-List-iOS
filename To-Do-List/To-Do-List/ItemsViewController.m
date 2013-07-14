@@ -7,11 +7,18 @@
 //
 
 #import "ItemsViewController.h"
+#import "DetailViewController.h"
 #import "ItemListing.h"
 #import "Item.h"
 #import "UIFont+ListAdditions.h"
 
 @implementation ItemsViewController
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[self tableView] reloadData];
+}
 
 - (id)init
 {
@@ -21,8 +28,20 @@
     
     if(self)
     {
-        for(int i = 0; i < 5; i++)
-            [[ItemListing sharedListing] createItem];
+        UINavigationItem *n = [self navigationItem];
+        
+        [n setTitle:@"To-Do List"];
+        
+        //for(int i = 0; i < 5; i++)
+            //[[ItemListing sharedListing] createItem];
+        
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc]
+                                initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                target:self
+                                action:@selector(addNewItem:)];
+        [[self navigationItem] setRightBarButtonItem:bbi];
+        
+        [[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
     }
     
     return self;
@@ -54,6 +73,44 @@
     [[cell textLabel] setText:[p description]];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        ItemListing *ps = [ItemListing sharedListing];
+        NSArray *items = [ps allItems];
+        Item *p = [items objectAtIndex:[indexPath row]];
+        [ps removeItem:p];
+        
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    [[ItemListing sharedListing] moveItemAtIndex:[sourceIndexPath row] toIndex:[destinationIndexPath row]];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DetailViewController *detailViewController = [[DetailViewController alloc] init];
+    
+    NSArray *items = [[ItemListing sharedListing] allItems];
+    Item *selectedItem = [items objectAtIndex:[indexPath row]];
+    [detailViewController setItem:selectedItem];
+    
+    [[self navigationController] pushViewController:detailViewController animated:YES];
+}
+
+- (IBAction)addNewItem:(id)sender
+{
+    Item *newItem = [[ItemListing sharedListing] createItem];
+    int lastRow = [[[ItemListing sharedListing] allItems] indexOfObject:newItem];
+    NSIndexPath *ip = [NSIndexPath indexPathForRow:lastRow inSection:0];
+    
+    [[self tableView] insertRowsAtIndexPaths:[NSArray arrayWithObject:ip] withRowAnimation:UITableViewRowAnimationTop];
 }
 
 @end

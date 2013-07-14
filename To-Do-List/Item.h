@@ -10,6 +10,12 @@
 
 @interface Item : NSObject
 
+@property (nonatomic, copy) NSString *header;
+@property (nonatomic, copy) NSString *body;
+@property (nonatomic, readonly, strong) NSDate *date;
+@property (nonatomic, readonly, strong) NSDateFormatter *formatter;
+@property (nonatomic, readonly, copy) NSString *dateString;
+
 + (Item *) randomItem;
 
 // A designated initializer.

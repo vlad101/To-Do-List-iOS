@@ -51,4 +51,21 @@
     return p;
 }
 
+- (void)removeItem:(Item *)p
+{
+    [allItems removeObjectIdenticalTo:p];
+}
+
+- (void)moveItemAtIndex:(int)from toIndex:(int)to
+{
+   if(from == to)
+       return;
+    
+    Item *p = [allItems objectAtIndex:from];
+    
+    [allItems removeObjectAtIndex:from];
+    
+    [allItems insertObject:p atIndex:to];
+}
+
 @end

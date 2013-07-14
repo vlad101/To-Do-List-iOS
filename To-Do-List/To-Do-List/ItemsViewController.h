@@ -10,4 +10,6 @@
 
 @interface ItemsViewController : UITableViewController
 
+- (IBAction)addNewItem:(id)sender;
+
 @end

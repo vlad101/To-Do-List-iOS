@@ -9,19 +9,10 @@
 #import "Item.h"
 
 @interface Item ()
-@property (nonatomic, copy) NSString *header;
-@property (nonatomic, copy) NSString *body;
-@property (nonatomic, readonly, strong) NSDate *date;
-@property (nonatomic, readonly, strong) NSDateFormatter *formatter;
-@property (nonatomic, readonly, copy) NSString *dateString;
+
 @end
 
 @implementation Item
-
-@synthesize header = _header;
-@synthesize body = _body;
-@synthesize date = _date;
-@synthesize dateString = _dateString;
 
 + (Item *) randomItem
 {
@@ -62,20 +53,19 @@
     return randomItem;
 }
 
-- (id)initWithHeader:(NSString *)header
-                body:(NSString *)body
+- (id)initWithHeader:(NSString *)h
+                body:(NSString *)b
 {
     self = [super init];
     
     if(self)
     {
-        _header = header;
-        _body = body;
+        _header = h;
+        _body = b;
         
         _formatter = [[NSDateFormatter alloc] init];
         [_formatter setDateFormat:@"dd-MM-yyyy HH:mm"];
         _dateString = [_formatter stringFromDate:[NSDate date]];
-        
     }
     
     return self;

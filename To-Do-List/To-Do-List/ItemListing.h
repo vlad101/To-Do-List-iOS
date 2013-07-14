@@ -19,5 +19,7 @@
 
 - (NSArray *)allItems;
 - (Item *)createItem;
+- (void)removeItem:(Item *)p;
+- (void)moveItemAtIndex:(int)from toIndex:(int)to;
 
 @end

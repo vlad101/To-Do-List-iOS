@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>349EECCF-4242-45B3-888F-58929FCE6728</string>
+	<key>IDESourceControlProjectName</key>
+	<string>To-Do-List</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>632FBB77-6CE4-45AC-86F0-02F797D9612E</key>
+		<string>https://github.com/vlad101/To-Do-List-iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>To-Do-List/To-Do-List.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>632FBB77-6CE4-45AC-86F0-02F797D9612E</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/vlad101/To-Do-List-iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>632FBB77-6CE4-45AC-86F0-02F797D9612E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>632FBB77-6CE4-45AC-86F0-02F797D9612E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>To-Do-List-iOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>
