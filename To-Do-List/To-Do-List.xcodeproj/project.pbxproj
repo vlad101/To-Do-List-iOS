@@ -20,11 +20,11 @@
 		E73D81EB1790E27000A9A49F /* ItemListing.m in Sources */ = {isa = PBXBuildFile; fileRef = E73D81EA1790E27000A9A49F /* ItemListing.m */; };
 		E7636E66179214C100C91B61 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7636E64179214C100C91B61 /* DetailViewController.m */; };
 		E7636E67179214C100C91B61 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7636E65179214C100C91B61 /* DetailViewController.xib */; };
-		E76C788D179370E800BD66E8 /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E76C788B179370E800BD66E8 /* AddItemViewController.m */; };
-		E76C788E179370E800BD66E8 /* AddItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76C788C179370E800BD66E8 /* AddItemViewController.xib */; };
 		E77F5AD0178C42FF00AE83EF /* Action_Man.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E77F5ACF178C42FF00AE83EF /* Action_Man.ttf */; };
 		E77F5AD3178C438200AE83EF /* UIFont+ListAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E77F5AD2178C438200AE83EF /* UIFont+ListAdditions.m */; };
 		E78F740617942B190058383C /* ImageListing.m in Sources */ = {isa = PBXBuildFile; fileRef = E78F740517942B190058383C /* ImageListing.m */; };
+		E78F740A17946FE90058383C /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E78F740817946FE90058383C /* AddItemViewController.m */; };
+		E78F740B17946FE90058383C /* AddItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E78F740917946FE90058383C /* AddItemViewController.xib */; };
 		E7EB2E37178BB21F00BDC687 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = E7EB2E36178BB21F00BDC687 /* Item.m */; };
 /* End PBXBuildFile section */
 
@@ -49,14 +49,14 @@
 		E7636E63179214C100C91B61 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		E7636E64179214C100C91B61 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		E7636E65179214C100C91B61 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
-		E76C788A179370E800BD66E8 /* AddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemViewController.h; sourceTree = "<group>"; };
-		E76C788B179370E800BD66E8 /* AddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
-		E76C788C179370E800BD66E8 /* AddItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddItemViewController.xib; sourceTree = "<group>"; };
 		E77F5ACF178C42FF00AE83EF /* Action_Man.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Action_Man.ttf; sourceTree = "<group>"; };
 		E77F5AD1178C438200AE83EF /* UIFont+ListAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+ListAdditions.h"; path = "To-Do-List/UIFont+ListAdditions.h"; sourceTree = "<group>"; };
 		E77F5AD2178C438200AE83EF /* UIFont+ListAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+ListAdditions.m"; path = "To-Do-List/UIFont+ListAdditions.m"; sourceTree = "<group>"; };
 		E78F740417942B190058383C /* ImageListing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageListing.h; sourceTree = "<group>"; };
 		E78F740517942B190058383C /* ImageListing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageListing.m; sourceTree = "<group>"; };
+		E78F740717946FE90058383C /* AddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemViewController.h; sourceTree = "<group>"; };
+		E78F740817946FE90058383C /* AddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
+		E78F740917946FE90058383C /* AddItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddItemViewController.xib; sourceTree = "<group>"; };
 		E7EB2E35178BB21F00BDC687 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = ../Item.h; sourceTree = "<group>"; };
 		E7EB2E36178BB21F00BDC687 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = ../Item.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,9 +119,9 @@
 				E7636E63179214C100C91B61 /* DetailViewController.h */,
 				E7636E64179214C100C91B61 /* DetailViewController.m */,
 				E7636E65179214C100C91B61 /* DetailViewController.xib */,
-				E76C788A179370E800BD66E8 /* AddItemViewController.h */,
-				E76C788B179370E800BD66E8 /* AddItemViewController.m */,
-				E76C788C179370E800BD66E8 /* AddItemViewController.xib */,
+				E78F740717946FE90058383C /* AddItemViewController.h */,
+				E78F740817946FE90058383C /* AddItemViewController.m */,
+				E78F740917946FE90058383C /* AddItemViewController.xib */,
 				E73B972F178B918100753CEA /* Supporting Files */,
 			);
 			path = "To-Do-List";
@@ -207,7 +207,7 @@
 				E7636E67179214C100C91B61 /* DetailViewController.xib in Resources */,
 				E77F5AD0178C42FF00AE83EF /* Action_Man.ttf in Resources */,
 				E73B973B178B918100753CEA /* Default.png in Resources */,
-				E76C788E179370E800BD66E8 /* AddItemViewController.xib in Resources */,
+				E78F740B17946FE90058383C /* AddItemViewController.xib in Resources */,
 				E73B973D178B918100753CEA /* Default@2x.png in Resources */,
 				E73B973F178B918100753CEA /* Default-568h@2x.png in Resources */,
 			);
@@ -221,10 +221,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7EB2E37178BB21F00BDC687 /* Item.m in Sources */,
-				E76C788D179370E800BD66E8 /* AddItemViewController.m in Sources */,
 				E73B9735178B918100753CEA /* main.m in Sources */,
 				E73D81EB1790E27000A9A49F /* ItemListing.m in Sources */,
 				E73B9739178B918100753CEA /* ListAppDelegate.m in Sources */,
+				E78F740A17946FE90058383C /* AddItemViewController.m in Sources */,
 				E73D81E81790E06900A9A49F /* ItemsViewController.m in Sources */,
 				E77F5AD3178C438200AE83EF /* UIFont+ListAdditions.m in Sources */,
 				E7636E66179214C100C91B61 /* DetailViewController.m in Sources */,
@@ -308,7 +308,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "To-Do-List/To-Do-List-Prefix.pch";
 				INFOPLIST_FILE = "To-Do-List/To-Do-List-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -319,7 +321,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "To-Do-List/To-Do-List-Prefix.pch";
 				INFOPLIST_FILE = "To-Do-List/To-Do-List-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

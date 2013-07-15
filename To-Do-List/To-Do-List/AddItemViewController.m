@@ -40,9 +40,19 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        // Custom initialization
+        UIBarButtonItem *doneItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                 target:self
+                                 action:@selector(addItem:)];
+        
+        [[self navigationItem] setRightBarButtonItem:doneItem];
     }
     return self;
+}
+// Ensure that all instances of ListViewController use the same style,
+// no matter what initialization method is sent to it.
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    return [self init];
 }
 
 - (void)viewDidLoad
