@@ -12,6 +12,7 @@
                 <outlet property="dateLabel" destination="a8V-Fx-xZ9" id="bVI-XI-KOf"/>
                 <outlet property="headerField" destination="gKB-H6-lVP" id="Mpg-Tj-5M4"/>
                 <outlet property="headerLabel" destination="jth-ND-4MN" id="ifn-Ud-ERe"/>
+                <outlet property="imageView" destination="alM-gD-f0J" id="dwO-nR-Ryk"/>
                 <outlet property="statusLabel" destination="2wO-D1-LSW" id="Af9-Fu-Y32"/>
                 <outlet property="view" destination="jfb-3p-DII" id="fQ3-XG-5W9"/>
             </connections>
@@ -34,13 +35,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8V-Fx-xZ9">
-                    <rect key="frame" x="20" y="342" width="280" height="21"/>
+                    <rect key="frame" x="26" y="260" width="280" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter text..." translatesAutoresizingMaskIntoConstraints="NO" id="yJ1-Ft-oJe">
-                    <rect key="frame" x="81" y="167" width="225" height="157"/>
+                    <rect key="frame" x="81" y="167" width="225" height="85"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -60,10 +61,10 @@
                     </connections>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdy-Z8-8ae">
-                    <rect key="frame" x="72" y="371" width="176" height="44"/>
+                    <rect key="frame" x="78" y="394" width="176" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="Add Item!">
+                    <state key="normal" title="Add">
                         <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -75,11 +76,26 @@
                     </connections>
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wO-D1-LSW">
-                    <rect key="frame" x="72" y="422" width="176" height="21"/>
+                    <rect key="frame" x="72" y="65" width="176" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ItN-KQ-Nn8">
+                    <rect key="frame" x="0.0" y="437" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem systemItem="camera" id="hJH-8k-4VO">
+                            <connections>
+                                <action selector="takePicture:" destination="-1" id="Nh9-w8-T8g"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="alM-gD-f0J">
+                    <rect key="frame" x="62" y="297" width="197" height="89"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -91,11 +107,13 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddItemViewController.h"/>
             <relationships>
                 <relationship kind="action" name="addItem:"/>
+                <relationship kind="action" name="takePicture:"/>
                 <relationship kind="outlet" name="bodyField" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="bodyLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="headerField" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="headerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="statusLabel" candidateClass="UILabel"/>
             </relationships>
         </class>

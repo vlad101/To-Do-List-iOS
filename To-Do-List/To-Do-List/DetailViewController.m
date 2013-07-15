@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "Item.h"
+#import "ImageListing.h"
 #import "UIFont+ListAdditions.h"
 
 @interface DetailViewController ()
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *headerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bodyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @end
 
 @implementation DetailViewController
@@ -27,6 +29,7 @@
 @synthesize headerLabel = _headerLabel;
 @synthesize bodyLabel = _bodyLabel;
 @synthesize statusLabel = _statusLabel;
+@synthesize imageView = _imageView;
 
 @synthesize item;
 
@@ -70,6 +73,17 @@
     [_dateLabel setText:[formatter stringFromDate:[NSDate date]]];
     
     [[self navigationItem] setTitle:[item header]];
+    
+    NSString *imageKey = [item imageKey];
+    
+    if(imageKey)
+    {
+        UIImage *imageToDisplay = [[ImageListing sharedListing] imageForKey:imageKey];
+        
+        [_imageView setImage:imageToDisplay];
+    }
+    else
+        [_imageView setImage:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -93,6 +107,49 @@
 {
     item = i;
     [[self navigationItem] setTitle:[item header]];
+}
+
+- (IBAction)takePicture:(id)sender
+{
+    NSLog(@"Take picture");
+    
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    else
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    
+    [imagePicker setDelegate:self];
+    
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    NSString *oldKey = [item imageKey];
+    
+    if(oldKey)
+        [[ImageListing sharedListing] deleteImageForKey:oldKey];
+    
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    CFUUIDRef newUniqueID = CFUUIDCreate(kCFAllocatorDefault);
+    
+    CFStringRef newUniqueIDString = CFUUIDCreateString(kCFAllocatorDefault, newUniqueID)
+    ;
+    
+    NSString *key = (__bridge NSString *)newUniqueIDString;
+    [item setImageKey:key];
+    
+    [[ImageListing sharedListing] setImage:image forKey:[item imageKey]];
+    
+    CFRelease(newUniqueIDString);
+    CFRelease(newUniqueID);
+    
+    [_imageView setImage:image];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

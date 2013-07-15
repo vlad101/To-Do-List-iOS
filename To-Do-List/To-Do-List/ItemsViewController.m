@@ -99,6 +99,9 @@
 {
     DetailViewController *detailViewController = [[DetailViewController alloc] init];
     
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:nil action:nil];
+    [[self navigationItem] setBackBarButtonItem:newBackButton];
+    
     NSArray *items = [[ItemListing sharedListing] allItems];
     Item *selectedItem = [items objectAtIndex:[indexPath row]];
     [detailViewController setItem:selectedItem];
@@ -111,6 +114,9 @@
     AddItemViewController *addItemViewController = [[AddItemViewController alloc] initWithNibName:@"AddItemViewController" bundle:nil];
     [self.navigationController pushViewController:addItemViewController animated:YES];
     NSLog(@"Pushed a addItemViewController");
+    
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:nil action:nil];
+    [[self navigationItem] setBackBarButtonItem:newBackButton];
     
     if([addItemViewController item])
     {

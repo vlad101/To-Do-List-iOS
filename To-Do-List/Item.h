@@ -16,6 +16,8 @@
 @property (nonatomic, readonly, strong) NSDateFormatter *formatter;
 @property (nonatomic, readonly, copy) NSString *dateString;
 
+@property (nonatomic, copy) NSString *imageKey;
+
 + (Item *) randomItem;
 
 // A designated initializer.

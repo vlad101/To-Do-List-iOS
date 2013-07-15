@@ -8,11 +8,9 @@
 
 #import "Item.h"
 
-@interface Item ()
-
-@end
-
 @implementation Item
+
+@synthesize imageKey;
 
 + (Item *) randomItem
 {

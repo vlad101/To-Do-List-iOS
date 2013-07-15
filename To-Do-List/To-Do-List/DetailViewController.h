@@ -11,9 +11,10 @@
 @class Item;
 
 @interface DetailViewController : UIViewController
-<UITextViewDelegate>
+<UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {}
 
 @property (nonatomic, strong) Item *item;
+- (IBAction)takePicture:(id)sender;
 
 @end

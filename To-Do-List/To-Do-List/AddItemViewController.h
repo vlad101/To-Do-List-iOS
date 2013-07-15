@@ -10,9 +10,11 @@
 #import "Item.h"
 
 @interface AddItemViewController : UIViewController
-<UITextViewDelegate>
+<UITextViewDelegate, UINavigationControllerDelegate,  UIImagePickerControllerDelegate>
 {}
 
 @property(nonatomic, strong) Item *item;
+
+- (IBAction)takePicture:(id)sender;
 
 @end
