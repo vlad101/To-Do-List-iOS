@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "ItemListing.h"
 #import "Item.h"
+#import "AddItemViewController.h"
 #import "UIFont+ListAdditions.h"
 
 @implementation ItemsViewController
@@ -33,6 +34,7 @@
                                 initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                 target:self
                                 action:@selector(addNewItem:)];
+        
         [[self navigationItem] setRightBarButtonItem:bbi];
         
         [[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
@@ -106,11 +108,20 @@
 
 - (IBAction)addNewItem:(id)sender
 {
-    Item *newItem = [[ItemListing sharedListing] createItem];
-    int lastRow = [[[ItemListing sharedListing] allItems] indexOfObject:newItem];
-    NSIndexPath *ip = [NSIndexPath indexPathForRow:lastRow inSection:0];
+    AddItemViewController *addItemViewController = [[AddItemViewController alloc] initWithNibName:@"AddItemViewController" bundle:nil];
+    [self.navigationController pushViewController:addItemViewController animated:YES];
+    NSLog(@"Pushed a addItemViewController");
     
-    [[self tableView] insertRowsAtIndexPaths:[NSArray arrayWithObject:ip] withRowAnimation:UITableViewRowAnimationTop];
+    if([addItemViewController item])
+    {
+        NSLog(@"The item is added to listing!");
+        //Item *newItem = [[ItemListing sharedListing] createItem];
+        Item *newItem = [[ItemListing sharedListing] addNewItemToListing:[addItemViewController item]];
+        int lastRow = [[[ItemListing sharedListing] allItems] indexOfObject:newItem];
+        NSIndexPath *ip = [NSIndexPath indexPathForRow:lastRow inSection:0];
+    
+        [[self tableView] insertRowsAtIndexPaths:[NSArray arrayWithObject:ip] withRowAnimation:UITableViewRowAnimationTop];
+    }
 }
 
 @end

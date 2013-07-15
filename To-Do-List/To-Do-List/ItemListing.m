@@ -51,6 +51,15 @@
     return p;
 }
 
+- (Item *)addNewItemToListing:(Item *)item
+{
+    Item *p = item;
+    
+    [allItems addObject:p];
+    
+    return p;
+}
+
 - (void)removeItem:(Item *)p
 {
     [allItems removeObjectIdenticalTo:p];
